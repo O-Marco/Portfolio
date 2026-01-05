@@ -411,7 +411,7 @@ main {
 
 /* --- SEÇÃO PROJETOS --- */
 .projects-section {
-    padding: 80px 4%;
+    padding: 150px 4%;
     background-color: var(--bg-color);
 }
 
@@ -751,6 +751,9 @@ main {
 }
 
 /* --- BOTÃO TOPO AVANÇADO --- */
+/* --- BOTÃO TOPO AVANÇADO --- */
+/* --- BOTÃO TOPO AVANÇADO --- */
+
 #backToTop {
     position: fixed;
     bottom: 30px;
