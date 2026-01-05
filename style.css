@@ -1,3 +1,15 @@
+/* Delay e Scroll Suave */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Garante que a seção tenha um espaçamento quando o link for clicado */
+section {
+    scroll-margin-top: 70px; /* Evita que a navbar fixa cubra o título da seção */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +18,11 @@
 }
 
 body {
-    background-color: #000000; /* Garante que não haja fundo branco */
+    background-color: #000000;
     color: #FFFFFF;
-    height: 100vh;
+    /* Remova ou ajuste o height: 100vh; se ele estiver impedindo o scroll real */
+    min-height: 100vh; 
+    overflow-x: hidden; /* Impede barra de rolagem lateral sem quebrar o sticky */
 }
 
 :root {
@@ -22,18 +36,27 @@ body {
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--bg-color);
-  height: 60px; /* Aumentei um pouco para acomodar fontes maiores */
-  padding: 0; 
-  font-family: 'Fira Code', monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000; /* Use a cor sólida em vez de transparente */
+    height: 60px;
+    padding: 0;
+    font-family: 'Fira Code', monospace;
 
-  /* --- TORNA O HEADER FIXO NO TOPO --- */
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Garante que ele fique por cima de tudo */
+    /* --- FIXO NO TOPO --- */
+    position: fixed; /* Mudar de sticky para fixed costuma ser mais seguro para portfólios */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Valor bem alto para garantir que fique sobre o Terminal e Projetos */
+    
+    border-bottom: 1px solid var(--border-color); /* Ajuda a delimitar onde termina a barra */
+}
+
+/* Como usamos fixed, precisamos dar um espaço no topo do main para não cobrir o conteúdo */
+main {
+    padding-top: 60px; 
 }
 
 .logo {
@@ -725,4 +748,89 @@ body {
     .rodape p {
         font-size: 12px;
     }
+}
+
+/* --- BOTÃO TOPO AVANÇADO --- */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    
+    /* Glassmorphism e Cores */
+    background: rgba(129, 41, 237, 0.2); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    
+    /* Borda e Forma */
+    border: 1px solid rgba(129, 41, 237, 0.5);
+    border-radius: 50%;
+    
+    /* Interação */
+    cursor: pointer;
+    display: none; /* Controlado pelo JS */
+    z-index: 9999;
+    
+    /* Tipografia e Centralização */
+    font-size: 18px;
+    display: flex; /* Para alinhar o ícone perfeitamente */
+    align-items: center;
+    justify-content: center;
+    
+    /* Transições Suaves */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Efeito de Brilho Pulsante (Animação constante) */
+#backToTop::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--accent-purple);
+    animation: pulse-border 2s infinite;
+    z-index: -1;
+}
+
+#backToTop:hover {
+    background-color: var(--accent-purple);
+    color: #fff;
+    transform: translateY(-10px) scale(1.1); /* Sobe e aumenta levemente */
+    box-shadow: 0 0 25px var(--accent-purple);
+    border-color: transparent;
+}
+
+/* --- ANIMAÇÕES AVANÇADAS --- */
+
+/* Surge com rotação e escala */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: scale(0) rotate(-180deg); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1) rotate(0deg); 
+    }
+}
+
+/* Efeito de pulso ao redor do botão */
+@keyframes pulse-border {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* Garante que o ícone fique centralizado */
+#backToTop i {
+    transition: transform 0.3s ease;
 }
