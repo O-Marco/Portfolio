@@ -368,3 +368,361 @@ body {
     margin-bottom: 5px; /* Reduzi para aproximar da linha decorativa */
     text-transform: uppercase;
 }
+
+/* SEÇÃO PROJETOS */
+/* SEÇÃO PROJETOS */
+/* SEÇÃO PROJETOS */
+
+/* --- ESTILO DO TÍTULO GLOBAL --- */
+.titulo {
+    font-size: 38px;
+    text-align: center;
+    color: #FFFFFF; /* "MINHA" ou "MEUS" fica Branco */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.titulo span {
+    color: var(--accent-purple); /* O restante fica Roxo */
+}
+
+/* --- SEÇÃO PROJETOS --- */
+.projects-section {
+    padding: 80px 4%;
+    background-color: var(--bg-color);
+}
+
+.projects-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+}
+
+.projects-header p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #161b22;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-purple);
+}
+
+.project-img-container {
+    height: 250px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay i {
+    color: white;
+    font-size: 28px;
+    transition: transform 0.3s;
+}
+
+.project-overlay i:hover {
+    color: var(--accent-purple);
+    transform: scale(1.2);
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    font-size: 10px;
+    font-weight: 800;
+    color: #e31b23; /* Vermelho como na imagem */
+    background: rgba(227, 27, 35, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px; /* Bordas bem arredondadas */
+    text-transform: uppercase;
+}
+
+.project-info p {
+    color: var(--text-gray);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* SEÇÃO CONTATO */
+/* SEÇÃO CONTATO */
+/* SEÇÃO CONTATO */
+
+.contact-section {
+    padding: 80px 4%;
+    background-color: var(--bg-color);
+    font-family: 'Fira Code', monospace; /* Fonte estilo código */
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-bottom: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-flex {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* Lado dos Links */
+.contact-info-side {
+    background: #0b111a;
+    padding: 30px;
+    border-radius: 8px;
+    min-width: 300px;
+    border: 1px solid var(--border-color);
+}
+
+.code-line {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.social-links-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-links-column a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.social-links-column a:hover {
+    color: var(--accent-green);
+}
+
+/* Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.contact-form input, .contact-form textarea {
+    background: #1e2d3d;
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    border-radius: 4px;
+    color: white;
+    font-family: inherit;
+    outline: none;
+}
+
+.contact-form button {
+    background: transparent;
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: rgba(67, 217, 173, 0.1);
+    box-shadow: 0 0 15px rgba(67, 217, 173, 0.3);
+}
+
+/* --- TERMINAL AVANÇADO --- */
+
+.terminal-footer {
+    max-width: 800px;
+    margin: 40px auto 0;
+    background: #01080e;
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Barra superior estilo Janela de Sistema */
+.terminal-footer::before {
+    content: "● ● ●";
+    display: block;
+    color: #43D9AD;
+    font-size: 10px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+    letter-spacing: 2px;
+}
+
+/* Efeito de digitação na rota */
+.terminal-footer p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 2s steps(30) forwards; /* Animação de digitação */
+}
+
+.terminal-footer .arrow { color: var(--accent-orange); font-weight: bold; }
+.terminal-footer .path { color: var(--accent-green); }
+
+/* Estilo da Resposta JSON com Glow */
+.terminal-footer .response {
+    margin-top: 12px;
+    color: var(--text-gray);
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards 2.5s; /* Aparece após a digitação */
+    padding-left: 20px;
+    border-left: 2px solid rgba(67, 217, 173, 0.2);
+}
+
+/* Cursor Piscante */
+.terminal-footer p:first-child::after {
+    content: "";
+    width: 8px;
+    height: 15px;
+    background: var(--accent-green);
+    display: inline-block;
+    animation: blink 0.8s infinite;
+    margin-left: 5px;
+}
+
+/* --- KEYFRAMES (ANIMAÇÕES) --- */
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Efeito de Scanline (Linha de TV antiga - Opcional) */
+.terminal-footer::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+/* --- ESTILO DO RODAPÉ --- */
+/* --- ESTILO DO RODAPÉ --- */
+/* --- ESTILO DO RODAPÉ --- */
+
+.rodape {
+    padding: 15px 4%;
+    background-color: #01080e; /* Um tom levemente mais escuro que o fundo principal */
+    border-top: 1px solid var(--border-color); /* Linha sutil para separar do conteúdo */
+    text-align: center;
+}
+
+.rodape p {
+    color: var(--text-gray);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.rodape p span {
+    color: var(--accent-purple); /* Ou a cor que você está usando como destaque */
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Efeito opcional: mudar a cor ao passar o mouse no nome */
+.rodape p span:hover {
+    text-shadow: 0 0 10px var(--accent-purple);
+    transition: 0.3s;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .rodape {
+        padding: 30px 4%;
+    }
+    
+    .rodape p {
+        font-size: 12px;
+    }
+}
