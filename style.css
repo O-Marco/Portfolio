@@ -216,7 +216,7 @@ main {
 
 /* SEÇÃO ESPECIALIDADES / FORMAÇÃO */
 .especialidades {
-    padding: 90px 4%;
+    padding: 150px 4%;
     background-color: var(--bg-color);
     font-family: 'Fira Code', monospace;
 }
@@ -321,7 +321,7 @@ main {
     /* Cards menores para caberem vários na mesma linha como na imagem */
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
     gap: 15px;
-    margin-top: -25px;
+    margin-top: -100px;
 }
 
 .skill-card {
@@ -403,6 +403,7 @@ main {
     color: #FFFFFF; /* "MINHA" ou "MEUS" fica Branco */
     margin-bottom: 20px;
     text-transform: uppercase;
+    
 }
 
 .titulo span {
@@ -411,7 +412,7 @@ main {
 
 /* --- SEÇÃO PROJETOS --- */
 .projects-section {
-    padding: 150px 4%;
+    padding: 135px 4%;
     background-color: var(--bg-color);
 }
 
@@ -837,3 +838,72 @@ main {
 #backToTop i {
     transition: transform 0.3s ease;
 }
+
+/* code-window */
+/* code-window */
+/* code-window */
+
+/* Container Principal */
+.code-window {
+    width: 450px;
+    background-color: #0d1117;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra suave, sem borda sólida */
+    margin: -50px;
+    border: none; /* Garante que não haja bordas */
+}
+
+/* Barra de título (macOS style) */
+.code-header {
+    background-color: #161b22;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Botões da janela */
+.dots {
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background-color: #ff5f56; }
+.yellow-dot { background-color: #ffbd2e; }
+.green-dot { background-color: #27c93f; }
+
+/* Nome do arquivo centralizado */
+.file-name {
+    color: #8b949e;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+}
+
+/* Área do Código */
+.code-content {
+    margin: 0;
+    padding: 25px;
+    background-color: #0d1117;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Syntax Highlighting */
+.code-content .purple { color: #c678dd; } 
+.code-content .yellow { color: #d19a66; } 
+.code-content .green  { color: #98c379; } 
+.code-content .gray   { color: #5c6370; font-style: italic; }
