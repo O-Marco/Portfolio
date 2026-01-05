@@ -2,12 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
     background-color: #000000; /* Garante que não haja fundo branco */
     color: #FFFFFF;
-    overflow-x: hidden; /* Evita rolagem lateral */
+    height: 100vh;
 }
 
 :root {
@@ -16,6 +17,8 @@ body {
   --accent-green: #43D9AD; 
   --border-color: #1E2D3D;  /* Mantive a borda sutil para separação */
   --accent-orange: #FEA55F;
+  --accent-purple: #5b39a9;
+  --accent-blue: #00d2ff;
 }
 
 .navbar {
@@ -34,8 +37,8 @@ body {
 }
 
 .logo {
-  color: var(--accent-green);
-  padding: 0 40px; 
+  color: var(--accent-purple);
+  padding: 0 80px; 
   height: 100%;
   display: flex;
   align-items: center;
@@ -79,7 +82,10 @@ body {
   .nav-links a { padding: 0 15px; font-size: 14px; }
 }
 
-/* Part1 */
+/* INICIO */
+/* INICIO */
+/* INICIO */
+
 /* Configurações Gerais da Seção */
 .sobre {
     padding: 80px 4%;
@@ -101,17 +107,22 @@ body {
 }
 
 /* Estilo da Imagem */
+/* Estilo da Imagem (Circulada) */
 .img-sobre img {
-    max-width: 350px;
-    border-radius: 20px;
+    width: 350px;           /* Largura fixa */
+    height: 350px;          /* Altura igual à largura para ser um círculo perfeito */
+    object-fit: cover;      /* Garante que sua foto não fique esticada */
+    border-radius: 50%;     /* Transforma em círculo */
     border: 2px solid var(--border-color);
-    box-shadow: 0 0 30px rgba(67, 217, 173, 0.1); /* Brilho verde sutil */
-    transition: transform 0.3s ease;
+    box-shadow: 0 0 30px rgba(67, 217, 173, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+/* Efeito de hover na imagem */
 .img-sobre img:hover {
-    transform: scale(1.02);
-    border-color: var(--accent-green);
+    transform: scale(1.05);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 35px rgba(67, 217, 173, 0.3); /* Aumenta o brilho no hover */
 }
 
 /* Estilo do Texto */
@@ -122,7 +133,7 @@ body {
 }
 
 .txt-sobre h2 span {
-    color: var(--accent-green);
+    color: var(--accent-purple);
     display: block; /* Faz o nome ficar na linha de baixo */
 }
 
@@ -173,4 +184,186 @@ body {
     .btn-social {
         justify-content: center;
     }
+}
+
+/* FORMAÇÃO */
+/* FORMAÇÃO */
+/* FORMAÇÃO */
+
+
+/* SEÇÃO ESPECIALIDADES / FORMAÇÃO */
+.especialidades {
+    padding: 90px 4%;
+    background-color: var(--bg-color);
+    font-family: 'Fira Code', monospace;
+}
+
+.especialidades h2.titulo {
+    font-size: 38px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.especialidades h2.titulo span {
+    color: var(--accent-purple); /* Mantendo o roxo para diferenciar as seções */
+}
+
+.lista-formacao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 30px auto 0 auto; /* Centraliza a lista na tela */
+}
+
+/* Card Estilo Premium Ajustado */
+.card-premium {
+    position: relative;
+    background: rgba(255, 255, 255, 0.01); 
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color); /* Usa a borda padrão do site */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.card-premium:hover {
+    transform: translateX(10px);
+    background: rgba(91, 57, 169, 0.05); /* Leve brilho roxo no fundo */
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.conteudo-card {
+    padding: 25px;
+    width: 100%;
+}
+
+.header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.tag-data {
+    font-size: 15px;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.badge-status {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 4px; /* Mais quadrado para combinar com o estilo VS Code */
+    background: rgba(91, 57, 169, 0.1);
+    color: var(--accent-green);
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.inst-nome {
+    color: var(--accent-purple);
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.curso-info {
+    color: #fff;
+    font-size: 18px;
+}
+
+.card-footer-decor {
+    width: 40px;
+    height: 2px;
+    background: var(--accent-purple);
+    margin-top: 20px;
+    transition: width 0.3s ease;
+}
+
+.card-premium:hover .card-footer-decor {
+    width: 100px; /* A linha cresce no hover */
+}
+
+/* SKILL */
+/* SKILL */
+/* SKILL */
+
+
+.skills-grid {
+    display: grid;
+    /* Cards menores para caberem vários na mesma linha como na imagem */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+    gap: 15px;
+    margin-top: -25px;
+}
+
+.skill-card {
+    border-radius: 10px;
+    padding: 20px 15px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.01); /* Adicionado um fundo sutil */
+}
+
+.skill-card:hover {
+    transform: translateX(10px);
+    background: rgba(91, 57, 169, 0.05); 
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* NOVO: Decoração que cresce no hover */
+.card-footer-decor {
+    width: 30px; /* Começa menor */
+    height: 2px;
+    background: var(--accent-purple);
+    margin-top: 15px; /* Espaço entre o badge e a linha */
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.skill-card:hover .card-footer-decor {
+    width: 80px; /* A linha cresce quando passa o mouse no card */
+}
+
+.icon-box {
+    font-size: 28px; 
+    color: var(--accent-purple);
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    color: #fff;
+    font-size: 15px; 
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.skill-desc {
+    color: #607B96;
+    font-size: 10px; 
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.badge-status-red {
+    background-color: var(--accent-purple);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 15px;
+    margin-bottom: 5px; /* Reduzi para aproximar da linha decorativa */
+    text-transform: uppercase;
 }
