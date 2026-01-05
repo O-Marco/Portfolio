@@ -293,7 +293,6 @@ body {
 /* SKILL */
 /* SKILL */
 
-
 .skills-grid {
     display: grid;
     /* Cards menores para caberem vários na mesma linha como na imagem */
@@ -307,7 +306,7 @@ body {
     padding: 20px 15px; 
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -341,6 +340,8 @@ body {
     font-size: 28px; 
     color: var(--accent-purple);
     margin-bottom: 10px;
+    align-items: center;
+    
 }
 
 .skill-name {
