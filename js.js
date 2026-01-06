@@ -20,3 +20,21 @@ backToTopButton.addEventListener("click", function() {
         });
     }, 200); // Mini delay de 200ms
 });
+
+
+const container = document.getElementById('skillsContainer');
+container.innerHTML += container.innerHTML; // Duplica os cards automaticamente
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+// Seleciona todas as seções para animar
+document.querySelectorAll('section').forEach((section) => {
+    section.classList.add('hidden');
+    observer.observe(section);
+});

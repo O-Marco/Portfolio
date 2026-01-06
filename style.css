@@ -1,14 +1,26 @@
 /* Delay e Scroll Suave */
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Para a rolagem ser suave */
 }
 
 /* Garante que a seção tenha um espaçamento quando o link for clicado */
 section {
-    scroll-margin-top: 70px; /* Evita que a navbar fixa cubra o título da seção */
+    scroll-margin-top: 0px; /* Evita que a navbar fixa cubra o título da seção */
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
 
 * {
     margin: 0;
@@ -68,6 +80,21 @@ main {
   font-size: 20px; 
   font-weight: 600;
   white-space: nowrap; /* Impede o nome de quebrar em duas linhas */
+}
+
+
+.logo:hover {
+    animation: glitch 1s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
 }
 
 .nav-links {
@@ -216,7 +243,7 @@ main {
 
 /* SEÇÃO ESPECIALIDADES / FORMAÇÃO */
 .especialidades {
-    padding: 150px 4%;
+    padding: 140px 4%;
     background-color: var(--bg-color);
     font-family: 'Fira Code', monospace;
 }
@@ -300,7 +327,7 @@ main {
     font-size: 18px;
 }
 
-.card-footer-decor {
+.card-footer-decor2 {
     width: 40px;
     height: 2px;
     background: var(--accent-purple);
@@ -308,7 +335,7 @@ main {
     transition: width 0.3s ease;
 }
 
-.card-premium:hover .card-footer-decor {
+.card-premium:hover .card-footer-decor2 {
     width: 100px; /* A linha cresce no hover */
 }
 
@@ -316,47 +343,64 @@ main {
 /* SKILL */
 /* SKILL */
 
-.skills-grid {
-    display: grid;
-    /* Cards menores para caberem vários na mesma linha como na imagem */
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
-    gap: 15px;
+/* Container que esconde o que sobra */
+.scroll-container {
+    overflow: hidden;
+    padding: 0px 0; /* Ajuste conforme seu layout */
+    width: 100%;
+    display: flex;
     margin-top: -100px;
 }
 
+.skills-grid {
+    display: flex; /* Mudamos de grid para flex */
+    gap: 15px;
+    width: max-content; /* Importante: faz a div ter a largura de todos os cards somados */
+    animation: scroll-infinito 60s linear infinite; /* 45s controla a velocidade */
+}
+
+/* Pausa a animação quando o mouse estiver em cima */
+.skills-grid:hover {
+    animation-play-state: paused;
+}
+
+/* Estilo do card (mantive o seu, apenas removi o que conflita) */
 .skill-card {
+    flex-shrink: 0; /* Impede que os cards amassem */
+    width: 180px;   /* Largura fixa para cada card */
     border-radius: 10px;
     padding: 20px 15px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.01); /* Adicionado um fundo sutil */
+    background: rgba(255, 255, 255, 0.01);
 }
 
-.skill-card:hover {
-    transform: translateX(10px);
-    background: rgba(91, 57, 169, 0.05); 
-    border-color: var(--accent-purple);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+/* A MÁGICA DA ANIMAÇÃO */
+@keyframes scroll-infinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exatamente metade da largura total (já que duplicamos os itens) */
+        transform: translateX(calc(-50% - 7.5px)); /* 7.5px é metade do seu gap de 15px */
+    }
 }
 
-/* NOVO: Decoração que cresce no hover */
+/* O Traçinho Decorativo (Footer) */
 .card-footer-decor {
-    width: 30px; /* Começa menor */
+    width: 30px;
     height: 2px;
-    background: var(--accent-purple);
-    margin-top: 15px; /* Espaço entre o badge e a linha */
-    transition: width 0.3s ease;
+    background-color: var(--skill-color); /* Segue a cor da variável */
+    margin: 15px auto 0 auto;
+    transition: width 0.5s ease;
     border-radius: 2px;
 }
 
 .skill-card:hover .card-footer-decor {
-    width: 80px; /* A linha cresce quando passa o mouse no card */
+    width: 80px;
 }
 
 .icon-box {
@@ -381,15 +425,43 @@ main {
     line-height: 1.2;
 }
 
-.badge-status-red {
-    background-color: var(--accent-purple);
+/* Badge Verde - Sou Bom */
+.badge-status-green {
+    background-color: var(--border-color); /* Verde */
     color: #fff;
     font-size: 9px;
     font-weight: 800;
-    padding: 3px 10px;
+    padding: 4px 12px;
     border-radius: 15px;
-    margin-bottom: 5px; /* Reduzi para aproximar da linha decorativa */
     text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Badge Amarela - Médio */
+.badge-status-yellow {
+    background-color: var(--border-color); /* Amarelo */
+    color: #ffffff; /* Texto preto para ler melhor no amarelo */
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Badge Vermelha - Ruim / Aprendendo */
+.badge-status-red {
+    background-color:var(--border-color); /* Vermelho */
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
 }
 
 /* SEÇÃO PROJETOS */
@@ -412,7 +484,7 @@ main {
 
 /* --- SEÇÃO PROJETOS --- */
 .projects-section {
-    padding: 135px 4%;
+    padding: 110px 4%;
     background-color: var(--bg-color);
 }
 
@@ -531,7 +603,7 @@ main {
 /* SEÇÃO CONTATO */
 
 .contact-section {
-    padding: 80px 4%;
+    padding: 110px 4%;
     background-color: var(--bg-color);
     font-family: 'Fira Code', monospace; /* Fonte estilo código */
 }
@@ -724,7 +796,7 @@ main {
 
 .rodape p {
     color: var(--text-gray);
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 1px;
 }
 
