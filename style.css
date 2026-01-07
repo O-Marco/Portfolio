@@ -26,7 +26,7 @@ section {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 body {
@@ -40,14 +40,11 @@ body {
 :root {
   --bg-color: #000000;      /* Preto puro para o fundo */
   --text-gray: #607B96;    
-  --accent-green: #43D9AD; 
   --border-color: #1E2D3D;  /* Mantive a borda sutil para separação */
   --accent-orange: #FEA55F;
   --accent-purple: #5b39a9;
   --accent-blue: #000ea3;
-  --accent-matrix:#00FF41;
-  --accent-matrix-sec:#008F11;
-  --accent-matrix-sec:#ffffff;
+  --accent:#ffffff;
 }
 
 .navbar {
@@ -75,7 +72,7 @@ main {
 }
 
 .logo {
-  color: var(--accent-purple);
+  color: var(--accent);
   padding: 0 80px; 
   height: 100%;
   display: flex;
@@ -106,7 +103,7 @@ main {
 }
 
 .nav-links a {
-  color: var(--text-gray);
+  color: var(--accent);
   text-decoration: none;
   padding: 0 35px; /* Mais espaço lateral para os links maiores */
   display: flex;
@@ -121,7 +118,7 @@ main {
 .nav-links a:hover {
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.05); /* Leve brilho no fundo ao passar o mouse */
-  box-shadow: inset 0 -3px 0 0 var(--accent-purple); 
+  box-shadow: inset 0 -3px 0 0 var(--accent-blue); 
 }
 
 /* Estilo para o link da página atual (se quiser usar) */
@@ -174,7 +171,7 @@ main {
 /* Efeito de hover na imagem */
 .img-sobre img:hover {
     transform: scale(1.05);
-    border-color: var(--accent-purple);
+    border-color: var(--accent-blue);
     box-shadow: 0 0 35px rgba(67, 217, 173, 0.3); /* Aumenta o brilho no hover */
 }
 
@@ -186,7 +183,7 @@ main {
 }
 
 .txt-sobre h2 span {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     display: block; /* Faz o nome ficar na linha de baixo */
 }
 
@@ -219,7 +216,7 @@ main {
 .btn-social button:hover {
     background-color: var(--border-color);
     border-color: var(--text-gray);
-    color: var(--accent-green);
+    color: var(--accent);
     transform: translateY(-3px);
 }
 
@@ -259,7 +256,7 @@ main {
 }
 
 .especialidades h2.titulo span {
-    color: var(--accent-purple); /* Mantendo o roxo para diferenciar as seções */
+    color: var(--accent-blue); /* Mantendo o roxo para diferenciar as seções */
 }
 
 .lista-formacao {
@@ -310,15 +307,15 @@ main {
     font-size: 11px;
     padding: 4px 12px;
     border-radius: 4px; /* Mais quadrado para combinar com o estilo VS Code */
-    background: rgba(91, 57, 169, 0.1);
-    color: var(--accent-green);
+    background: var(--text-gray);
+    color: var(--accent);
     border: 1px solid rgba(0, 210, 255, 0.2);
     text-transform: uppercase;
     font-weight: 700;
 }
 
 .inst-nome {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     font-size: 15px;
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -333,7 +330,7 @@ main {
 .card-footer-decor2 {
     width: 40px;
     height: 2px;
-    background: var(--accent-purple);
+    background: var(--accent-blue);
     margin-top: 20px;
     transition: width 0.3s ease;
 }
@@ -408,7 +405,7 @@ main {
 
 .icon-box {
     font-size: 28px; 
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     margin-bottom: 10px;
     align-items: center;
     
@@ -430,7 +427,7 @@ main {
 
 /* Badge Verde - Sou Bom */
 .badge-status-green {
-    background-color: var(--border-color); /* Verde */
+    background-color: var(--text-gray); /* Verde */
     color: #fff;
     font-size: 9px;
     font-weight: 800;
@@ -443,7 +440,7 @@ main {
 
 /* Badge Amarela - Médio */
 .badge-status-yellow {
-    background-color: var(--border-color); /* Amarelo */
+    background-color: var(--text-gray); /* Amarelo */
     color: #ffffff; /* Texto preto para ler melhor no amarelo */
     font-size: 9px;
     font-weight: 800;
@@ -456,7 +453,7 @@ main {
 
 /* Badge Vermelha - Ruim / Aprendendo */
 .badge-status-red {
-    background-color:var(--border-color); /* Vermelho */
+    background-color:var(--text-gray); /* Vermelho */
     color: #fff;
     font-size: 9px;
     font-weight: 800;
@@ -482,12 +479,12 @@ main {
 }
 
 .titulo span {
-    color: var(--accent-purple); /* O restante fica Roxo */
+    color: var(--accent-blue); /* O restante fica Roxo */
 }
 
 /* --- SEÇÃO PROJETOS --- */
 .projects-section {
-    padding: 110px 4%;
+    padding: 180px 4%;
     background-color: var(--bg-color);
 }
 
@@ -519,7 +516,7 @@ main {
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: var(--accent-purple);
+    border-color: var(--accent-blue);
 }
 
 .project-img-container {
@@ -564,7 +561,7 @@ main {
 }
 
 .project-overlay i:hover {
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     transform: scale(1.2);
 }
 
@@ -588,8 +585,8 @@ main {
 .project-tags span {
     font-size: 10px;
     font-weight: 800;
-    color: #e31b23; /* Vermelho como na imagem */
-    background: rgba(227, 27, 35, 0.1);
+    color: #ffffff; /* Vermelho como na imagem */
+    background: var(--text-gray);
     padding: 4px 12px;
     border-radius: 20px; /* Bordas bem arredondadas */
     text-transform: uppercase;
@@ -686,7 +683,7 @@ main {
 .contact-form button {
     background: transparent;
     border: 1px solid var(--text-gray);
-    color: var(--accent-green);
+    color: var(--accent-blue);
     padding: 12px;
     cursor: pointer;
     font-weight: bold;
@@ -717,7 +714,7 @@ main {
 .terminal-footer::before {
     content: "● ● ●";
     display: block;
-    color: var(--accent-green);
+    color: var(--accent);
     font-size: 10px;
     margin-bottom: 15px;
     opacity: 0.5;
@@ -735,8 +732,8 @@ main {
     animation: typing 2s steps(30) forwards; /* Animação de digitação */
 }
 
-.terminal-footer .arrow { color: var(--accent-green); font-weight: bold; }
-.terminal-footer .path { color: var(--accent-purple); }
+.terminal-footer .arrow { color: var(--accent); font-weight: bold; }
+.terminal-footer .path { color: var(--accent-blue); }
 
 /* Estilo da Resposta JSON com Glow */
 .terminal-footer .response {
@@ -753,7 +750,7 @@ main {
     content: "";
     width: 8px;
     height: 15px;
-    background: var(--accent-green);
+    background: var(--accent-blue);
     display: inline-block;
     animation: blink 0.8s infinite;
     margin-left: 5px;
@@ -804,14 +801,14 @@ main {
 }
 
 .rodape p span {
-    color: var(--accent-purple); /* Ou a cor que você está usando como destaque */
+    color: var(--accent-blue); /* Ou a cor que você está usando como destaque */
     font-weight: 700;
     text-transform: uppercase;
 }
 
 /* Efeito opcional: mudar a cor ao passar o mouse no nome */
 .rodape p span:hover {
-    text-shadow: 0 0 10px var(--accent-purple);
+    text-shadow: 0 0 10px var(--accent-blue);
     transition: 0.3s;
 }
 
@@ -838,13 +835,13 @@ main {
     height: 40px;
     
     /* Glassmorphism e Cores */
-    background: rgba(129, 41, 237, 0.2); 
+    background: var(--accent-blue); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: #fff;
     
     /* Borda e Forma */
-    border: 1px solid rgba(129, 41, 237, 0.5);
+    border: 1px solid var(--accent-blue);
     border-radius: 50%;
     
     /* Interação */
@@ -870,16 +867,16 @@ main {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 2px solid var(--accent-purple);
+    border: 2px solid var(--accent-blue);
     animation: pulse-border 2s infinite;
     z-index: -1;
 }
 
 #backToTop:hover {
-    background-color: var(--accent-purple);
+    background-color: var(--accent-blue);
     color: #fff;
     transform: translateY(-10px) scale(1.1); /* Sobe e aumenta levemente */
-    box-shadow: 0 0 25px var(--accent-purple);
+    box-shadow: 0 0 25px var(--accent-blue);
     border-color: transparent;
 }
 
